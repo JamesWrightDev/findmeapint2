@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/results', function(){
-    $response = GooglePlaces::nearbySearch('51.528820, -0.048160', '800', ['type'=>'bar', 'minprice'=>'1', 'rankby' => 'distance']);
+    $lat = 51.528820;
+    $long = -0.048160;
+    $response = GooglePlaces::nearbySearch($lat.','.$long, '800', ['type'=>'bar', 'minprice'=>'1', 'rankby' => 'distance']);
     $results = $response['results'];
     $query = array();
     $count = 0;
@@ -53,7 +55,7 @@ Route::get('/results', function(){
 
     $closePint = $query[0];
 
-    dd($cheapPint);
+    dd($query);
 
   
 });

@@ -15,7 +15,28 @@
     </head>
     <body>
         <div class="content">
-              
+              <input id='postcode' type="text" required>
+                <button type="submit">Find Me a Pint</button>
+                
+                <input placeholder="latitude"id='lat' type="text">
+                <p>Please enter a valid postcode</p>
         </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+
+        const button = document.querySelector('button');
+        let postCodeInput = document.getElementById('postcode');
+        let postCode = postCodeInput.value;
+        button.addEventListener('click', function() {
+            console.log(postCodeInput.value);
+            const url='https://api.postcodes.io/postcodes/' + postCodeInput.value;
+
+            axios.get(url)
+            .then(data=>console.log(data))
+            .cath(err=>console.log(err))
+        })
+    
+
+        </script>
     </body>
 </html>
