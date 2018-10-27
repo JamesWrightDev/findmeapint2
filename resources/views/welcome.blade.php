@@ -15,11 +15,15 @@
     </head>
     <body>
         <div class="content">
-              <input id='postcode' type="text" required>
-                <button type="submit">Find Me a Pint</button>
-                
-                <input placeholder="latitude"id='lat' type="text">
+            <form action="/results" method="POST" id='form'>
+                {{ csrf_field() }}
+
+                <input id='postcode' type="text" name="postcode" required>
+                <input  name="coordinates" placeholder="latitude" id='coordiantes' type="text" hidden>
+                <button type="button">Find Me a Pint</button>
                 <p>Please enter a valid postcode</p>
+            </form>
+              
         </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script>
@@ -32,8 +36,17 @@
             const url='https://api.postcodes.io/postcodes/' + postCodeInput.value;
 
             axios.get(url)
-            .then(data=>console.log(data))
-            .cath(err=>console.log(err))
+            .then(function (response){
+               
+                let lat = response.data.result.latitude;
+                let long = response.data.result.longitude;
+                let coordinates = lat +','+long;
+                document.getElementById('coordiantes').value = coordinates;
+                document.getElementById("form").submit();
+
+                
+            })
+            .cath(err=>console.log(err))      
         })
     
 

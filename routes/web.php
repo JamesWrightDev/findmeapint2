@@ -14,8 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('/results', 'ResultsController@index');
 
-Route::get('/results', function(){
+Route::post('/', function(Request $request){
+    dd($request);
     $lat = 51.528820;
     $long = -0.048160;
     $response = GooglePlaces::nearbySearch($lat.','.$long, '800', ['type'=>'bar', 'minprice'=>'1', 'rankby' => 'distance']);
@@ -36,26 +38,26 @@ Route::get('/results', function(){
     $closePint = $query[0];
 
     foreach($query as $k=>$v)
-    {
-        if($v['price_level']<$minCheapPint)
         {
-            $minCheapPint = $v['price_level'];
-            $cheapPint = $v;
+            if($v['price_level']<$minCheapPint)
+            {
+                $minCheapPint = $v['price_level'];
+                $cheapPint = $v;
+            }
+            
+            if($v['rating']>$maxBestPint)
+            {
+                $max = $v['rating'];
+                $bestPint = $v;
+            }
         }
-        
-        if($v['rating']>$maxBestPint)
-        {
-            $max = $v['rating'];
-            $bestPint = $v;
-        }
-    }
 
 
     $returnThis = array_search(max($query),$query);
 
     $closePint = $query[0];
 
-    dd($query);
+    return view('results', compact('closePint'));
 
   
 });
