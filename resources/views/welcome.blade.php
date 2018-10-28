@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Find Me A Pint</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -15,6 +15,7 @@
     </head>
     <body>
         <div class="content">
+            <h1>Find Me A Pint</h1>
             <form action="/results" method="POST" id='form'>
                 {{ csrf_field() }}
 

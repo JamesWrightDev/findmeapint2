@@ -14,12 +14,20 @@ class ResultsController extends Controller
         $results = $response['results'];
         $query = array();
         $count = 0;
+        
     foreach($results as $result){
-        $a = array('name' => $result['name'],'rating' => $result['rating'], 'price_level' => $result['price_level']);
+        $a = array
+        (
+            'name' => $result['name'],
+            'rating' => $result['rating'], 
+            'price_level' => $result['price_level'],
+            'place_id' => $result['place_id']
+        );
         array_push($query, $a);
         $result['name'];
         $result['rating'];
         $result['price_level'];
+        $result['place_id'];
     }
     $maxBestPint = 0;
     $minCheapPint = 6;
@@ -46,7 +54,6 @@ class ResultsController extends Controller
     $returnThis = array_search(max($query),$query);
 
     $closePint = $query[0];
-
     return view('results', compact('closePint','cheapPint','bestPint'));
     }
 }
