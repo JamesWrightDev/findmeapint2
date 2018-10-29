@@ -54,17 +54,18 @@
         }
 
         button.addEventListener('click', function() {
-            showLoader();
+            
             console.log(postCodeInput.value);
             const url='https://api.postcodes.io/postcodes/' + postCodeInput.value;
 
             axios.get(url)
-            .then(function (response){
-                let lat = response.data.result.latitude;
-                let long = response.data.result.longitude;
-                findPint(lat, long);
-                
-            })
+                .then(function (response){
+                    let lat = response.data.result.latitude;
+                    let long = response.data.result.longitude;
+                    showLoader();
+                    findPint(lat, long);
+                    
+                })
             .catch(function(response){
                 document.getElementById('error').style.display ="block";
                 console.log('error')
