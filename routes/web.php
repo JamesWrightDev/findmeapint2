@@ -23,3 +23,6 @@ Route::post('/', function(Request $request){
 
   
 });
+Route::get('/test', function () {
+    return view('test');
+});
