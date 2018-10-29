@@ -6,7 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Find Me A Pint</title>
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
@@ -14,40 +17,60 @@
        
     </head>
     <body>
-        <div class="content">
-            <h1>Find Me A Pint</h1>
-            <form action="/results" method="POST" id='form'>
-                {{ csrf_field() }}
+        <h1>find me a pint</h1>
+        @yield('content')
 
-                <input id='postcode' type="text" name="postcode" required>
-                <input  name="coordinates" placeholder="latitude" id='coordiantes' type="text" hidden>
-                <button type="button">Find Me a Pint</button>
-                <p>Please enter a valid postcode</p>
-            </form>
-              
-        </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/js/app.js"></script>
         <script>
+        
+        const showLoader = () =>{
+            document.querySelector('.search-container').style.display = "none";
+            document.getElementById('loader').style.display = "block";
 
-        const button = document.querySelector('button');
+        }
+
+        const locationButton = document.getElementById('geoButton');
+        locationButton.addEventListener('click' ,function(){
+            showLoader();
+            navigator.geolocation.getCurrentPosition(showPosition);
+                function showPosition(position) {
+                    
+                    findPint(position.coords.latitude, position.coords.longitude);
+                }
+
+                
+        })
+        const button = document.getElementById('postcodeButton');
         let postCodeInput = document.getElementById('postcode');
         let postCode = postCodeInput.value;
+
+        const findPint = (lat,long) =>{
+            
+            const coordiantes = lat + "," + long;
+            document.getElementById('coordiantes').value = coordiantes;
+            document.getElementById("form").submit();
+            console.log('hello')
+        }
+
         button.addEventListener('click', function() {
+            showLoader();
             console.log(postCodeInput.value);
             const url='https://api.postcodes.io/postcodes/' + postCodeInput.value;
 
             axios.get(url)
             .then(function (response){
-               
                 let lat = response.data.result.latitude;
                 let long = response.data.result.longitude;
-                let coordinates = lat +','+long;
-                document.getElementById('coordiantes').value = coordinates;
-                document.getElementById("form").submit();
-
+                findPint(lat, long);
                 
             })
-            .cath(err=>console.log(err))      
+            .catch(function(response){
+                document.getElementById('error').style.display ="block";
+                console.log('error')
+            })
+                
+
         })
     
 

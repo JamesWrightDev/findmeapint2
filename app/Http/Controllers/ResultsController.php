@@ -9,6 +9,7 @@ class ResultsController extends Controller
 {
     public function index(Request $request)
     {
+        
         $coordinates = $request->coordinates;
         $response = GooglePlaces::nearbySearch($coordinates, '800', ['type'=>'bar', 'minprice'=>'1', 'rankby' => 'distance']);
         $results = $response['results'];
