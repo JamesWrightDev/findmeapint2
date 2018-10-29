@@ -1,4 +1,5 @@
 
+
 .loader {
     border: 8px solid #f3f3f3; /* Light grey */
     border-top: 8px solid black; /* Blue */
@@ -13,8 +14,40 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Color Scheme */
-/* $color1: rgba(80, 81, 79, 1);
+input{
+    padding: 10px 10px;
+    width: 50%;
+    border-radius: 5px;
+    border: solid black 1px;
+}
+.btn{
+    padding: 10px 10px;
+}
+
+.logo{
+    width: 300px;
+    margin: 0 auto;
+}
+.wrapper{
+    margin: 0 auto;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.conatiner{
+    margin: 0 auto;
+    width: 50%;
+}
+.is-horizontal-center {
+    justify-content: center;
+  }
+
+.margin-medium{
+    margin: 1em 0;
+}
+Color Scheme */
+$color1: rgba(80, 81, 79, 1);
 $color2: rgba(242, 95, 92, 1);
 $color3: rgba(255, 224, 102, 1);
 $color4: rgba(36, 123, 160, 1);
@@ -24,4 +57,4 @@ $color1: rgba(38, 70, 83, 1);
 $color2: rgba(42, 157, 143, 1);
 $color3: rgba(233, 196, 106, 1);
 $color4: rgba(244, 162, 97, 1);
-$color5: rgba(231, 111, 81, 1); */
+$color5: rgba(231, 111, 81, 1);

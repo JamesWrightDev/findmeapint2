@@ -7,8 +7,7 @@
 
         <title>Find Me A Pint</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -17,8 +16,19 @@
        
     </head>
     <body>
-        <h1>find me a pint</h1>
-        @yield('content')
+      
+        <section class="secton">
+            <div class="container">
+                    <div class="is-flex is-horizontal-center">
+                    <img src="{{ asset('img/logo.svg')}}" alt="Logo" class="logo">
+                    </div>
+                    
+                    @yield('content')
+            
+                
+            </div>
+        </section>
+        
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="/js/app.js"></script>
@@ -66,9 +76,11 @@
                     findPint(lat, long);
                     
                 })
-            .catch(function(response){
+            .catch(error=>{
+                console.log(error.message)
+            },function(response){
                 document.getElementById('error').style.display ="block";
-                console.log('error')
+                
             })
                 
 

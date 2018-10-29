@@ -1,30 +1,41 @@
 @extends('welcome')
 @section('content')
-<div class="container">
-        <div class="loader" style="display:none" id="loader"></div>              
-            <div class="search-container">
-                <div class="row">
-                    <div class="col-md-12 col-centered">
-                        <form action="/results" method="POST" id='form' >
-                            {{ csrf_field() }}
-                            <input id='postcode' type="text" name="postcode" required placeholder="Post code">
-                            <input  name="coordinates" placeholder="latitude" id='coordiantes' type="text" hidden>
-                            
-                            <p id="error" style="display:none" >Please enter a valid postcode</p>
-                        </form>
-                    
-                    </div>
-                    
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                    <button type="button" id="postcodeButton" class="btn btn-primary">Find Me a Pint</button>
-                    <button type="button" id="geoButton"  class="btn btn-danger">Use Current Location</button>
-                    </div>
-                </div>
-            </div>
+
+        
+<div class="loader" style="display:none" id="loader"></div>
+<div class="search-container">
+		<div class="columns margin-medium">
+				<div class="column is-three-fifths is-offset-one-fifth">
+					<div class="is-flex is-horizontal-center">
+							<form action="/results" method="POST" id='form' >
+								{{ csrf_field() }}            
+							<input id='postcode' type="text" name="postcode" required placeholder="Post code">
+							<button type="button" id="postcodeButton" class="button is-primary">Find Me a Pint</button>
+							<input  name="coordinates" placeholder="latitude" id='coordiantes' type="text" hidden>
+							<p id="error" style="display:none" >Please enter a valid postcode</p>
+							</form>
+			
+					</div>
+					
+					
+							</div>
+						</div>
+						<hr>
+						<div class="columns margin-medium">
+								<div class="column is-three-fifths is-offset-one-fifth">
+									<div class="is-flex is-horizontal-center">
+											<button type="button" id="geoButton"  class="button is-primary">Use Current Location</button>
+			
+									</div>
+							
+						</div>
+						</div>
+						
+					</div>
+
+</div>
+
             
             
-              
-        </div>
+
         @endsection
