@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
         <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
@@ -21,7 +22,7 @@
             <div class="container">
                     <div class="is-flex is-horizontal-center">
                     <img src="{{ secure_asset('img/logo.svg')}}" alt="Logo" class="logo">
-                    <p>BETA</p>
+                    
                     </div>
                     
                     @yield('content')
@@ -29,6 +30,7 @@
                 
             </div>
         </section>
+        <p>BETA</p>
         
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
