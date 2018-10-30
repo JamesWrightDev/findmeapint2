@@ -42,11 +42,10 @@ input{
     border-radius: 5px;
     border: solid black 1px;
     width: 40%;
-    margin: 1.5em auto;
+    
 }
 .button{
     width: 50%;
-    margin: 1em auto;
 }
 
 
