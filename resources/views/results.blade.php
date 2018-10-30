@@ -1,6 +1,7 @@
 @extends('welcome')
 @section('content')
-    <div class="columns">
+  <div class="results margin-medium">
+  <div class="columns">
         <div class="column is-three-fifths is-offset-one-fifth ">
           <div class="is-flex is-horizontal-center flex-column">
             <h2 class="is-size-4 has-text-centered">Closest Pint Near You</h2>
@@ -27,6 +28,8 @@
           </div>
         </div>
       </div>
+  </div>
+    
 
 
 @endsection

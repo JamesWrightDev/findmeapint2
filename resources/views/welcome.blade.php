@@ -76,9 +76,7 @@
                     findPint(lat, long);
                     
                 })
-            .catch(error=>{
-                console.log(error.message)
-            },function(response){
+            .catch(function(response){
                 document.getElementById('error').style.display ="block";
                 
             })

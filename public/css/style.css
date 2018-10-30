@@ -21,7 +21,7 @@ form{
 }
 .loader {
     border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid black; /* Blue */
+    border-top: 8px solid rgba(231, 111, 81, 1); /* Blue */
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -34,16 +34,17 @@ form{
 }
 
 input{
-    padding: 10px 10px;
+    padding: 10px ;
     border-radius: 5px;
     border: solid black 1px;
     width: 40%;
-    margin: 1em auto;
+    margin: 1.5em auto;
 }
 .button{
     width: 50%;
     margin: 1em auto;
 }
+
 
 .logo{
     width: 500px;
@@ -69,5 +70,8 @@ input{
 
 .margin-medium{
     margin: 1em 0;
+}
+.margin-top-large{
+    margin-top: 2em;
 }
 /* Color Scheme */
