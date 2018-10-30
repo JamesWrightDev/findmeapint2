@@ -21,6 +21,7 @@
             <div class="container">
                     <div class="is-flex is-horizontal-center">
                     <img src="{{ asset('img/logo.svg')}}" alt="Logo" class="logo">
+                    <p>BETA</p>
                     </div>
                     
                     @yield('content')
