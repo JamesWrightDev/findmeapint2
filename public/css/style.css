@@ -1,6 +1,6 @@
 
 body{
-    background-color: #264653;
+    
     height: 100vh;
 
 }
@@ -14,7 +14,7 @@ h2{
     color: rgba(231, 111, 81, 1);
 }
 h3{
-    color: white;
+    color: black;
 }
 form{
     margin: 0;
