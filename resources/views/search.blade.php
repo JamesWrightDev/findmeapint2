@@ -1,7 +1,7 @@
 @extends('welcome')
 @section('content')
 
-<div class="columns margin-medium">
+<div class="columns">
 	<div class="column is-three-fifths is-offset-one-fifth">
 		<div class="is-flex is-horizontal-center">
 			<div class="loader" style="display:none" id="loader">

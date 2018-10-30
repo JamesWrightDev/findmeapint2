@@ -48,6 +48,7 @@ input{
 
 .logo{
     width: 500px;
+    height: 200px;
     margin: 0 auto;
 }
 .wrapper{
@@ -71,7 +72,7 @@ input{
 .margin-medium{
     margin: 1em 0;
 }
-.margin-top-large{
-    margin-top: 2em;
+.results{
+    margin-top: 1em;
 }
 /* Color Scheme */
