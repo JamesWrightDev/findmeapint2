@@ -24,7 +24,7 @@
           <div class="is-flex is-horizontal-center flex-column">
             <h2 class="is-size-4 has-text-centered">Cheapest Pint Near You</h2>
             <h3 class="is-size-2 has-text-centered">{{ $cheapPint['name'] }}</h3>
-            <a class='button button-primary' href="https://maps.google.com/query_place_id={{ $cheapPint['place_id'] }}">Test</a>
+            <a class='button button-primary' href="https://www.google.com/maps/search/?api=1&query={{ $cheapPint['name'] }}&query_place_id={{ $cheapPint['place_id'] }}">Test</a>
             <a class='button button-primary' href="https://maps.google.com/?q=place_id:{{ $cheapPint['place_id'] }}">Directions</a>
           </div>
         </div>
