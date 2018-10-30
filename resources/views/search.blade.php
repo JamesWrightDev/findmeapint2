@@ -19,7 +19,7 @@
 								{{ csrf_field() }}            
 							<input id='postcode' type="text" name="postcode" required placeholder="Post code">
 							<button type="button" id="postcodeButton" class=" button button-primary">Find Me a Pint</button>
-							<input  name="coordinates" placeholder="latitude" id='coordiantes' type="text" hidden>
+							<input style="display:none"  name="coordinates" placeholder="latitude" id='coordiantes' type="text" hidden>
 							<p id="error" style="display:none" >Please enter a valid postcode</p>
 							</form>
 			

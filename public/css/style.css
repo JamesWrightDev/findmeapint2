@@ -19,6 +19,10 @@ h3{
 form{
     margin: 0;
 }
+form input,
+form button{
+    display: inline-block;
+}
 .loader {
     border: 8px solid #f3f3f3; /* Light grey */
     border-top: 8px solid rgba(231, 111, 81, 1); /* Blue */
