@@ -30,9 +30,7 @@
                 
             </div>
         </section>
-        <footer class="footer">
-            <p class="has-text-centered margin-medium">Made by James Wright</p>
-        </footer>
+
         
         
 
