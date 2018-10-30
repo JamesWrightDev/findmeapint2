@@ -20,7 +20,7 @@
         <section class="secton">
             <div class="container">
                     <div class="is-flex is-horizontal-center">
-                    <img src="{{ asset('img/logo.svg')}}" alt="Logo" class="logo">
+                    <img src="{{ secure_asset('img/logo.svg')}}" alt="Logo" class="logo">
                     <p>BETA</p>
                     </div>
                     
