@@ -30,7 +30,10 @@
                 
             </div>
         </section>
-        <p>BETA</p>
+        <footer class="footer">
+            <p class="has-text-centered margin-medium">Made by James Wright</p>
+        </footer>
+        
         
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
